@@ -1,6 +1,8 @@
 import csv
 import pandas as pd
-import matplotlib.pyplot as pltt
+import os
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 DATA_INPUT = "filtered_data.csv"
 
@@ -24,11 +26,11 @@ df['date']=pd.to_datetime(df['date'],format='%d/%m/%Y')
 df['aug']= 100.00/df['start']*(df['end']-df['start'])
 
 print(df)
+
+
 ########  Ploting data using seaborn 
-# Import necessary packages
-import os
-import matplotlib.pyplot as plt
-import seaborn as sns
+
+
 
 # Handle date time conversions between pandas and matplotlib
 from pandas.plotting import register_matplotlib_converters

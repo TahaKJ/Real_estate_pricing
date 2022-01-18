@@ -11,7 +11,8 @@ filter_on_region = df [df['nom_region']=='Île-de-France']
 auction_commun = auction_data['commune']
 
 def get_lat_long(x):
-    i=filter_on_region[filter_on_region["nom_commune_complet"]==x]
-    print("for ", x , "found " , i)
+    res=filter_on_region[filter_on_region["nom_commune_complet"]==x]
+    res = res["latitude"]
+    print("for ", x , "found " , str(res))
 
 auction_commun.apply(get_lat_long)
